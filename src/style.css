@@ -1,0 +1,34 @@
+body {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+}
+
+main {
+	width: 100%;
+	height: 100vh;
+	background-image: url(/av/idle.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.lamb {
+	background-image: url(/av/lamb.jpg) !important;
+}
+.sauce {
+	background-image: url(/av/sauce.jpg) !important;
+}
+
+audio {
+	display: hidden;
+}
+
+.source {
+	width: 3rem;
+	height: 3rem;
+	color: white;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  z-index: 999;
+}
