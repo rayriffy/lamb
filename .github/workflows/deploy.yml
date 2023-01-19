@@ -18,8 +18,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: pnpm/action-setup@v2.2.4
-        name: 'Intitialize: Configure pnpm'
+      - name: 'Intitialize: Configure pnpm'
+        uses: pnpm/action-setup@v2.2.4
         id: pnpm-install
         with:
           version: 7
@@ -39,7 +39,7 @@ jobs:
       - name: 'Execute: Build'
         run: pnpm build
       - name: 'Deployment: Upload artifacts'
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: dist
       - name: 'Deployment: Deploy to target'
