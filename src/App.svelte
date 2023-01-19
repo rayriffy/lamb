@@ -7,7 +7,7 @@
 
 	let timeoutId: number
 
-	const onMouseDown = () => {
+	const onPressed = () => {
 		lambElement.currentTime = 0
 
 		if (timeoutId) clearTimeout(timeoutId)
@@ -19,7 +19,7 @@
 		lambElement.play()
 	}
 
-	const onMouseUp = () => {
+	const onRelease = () => {
 		sauceElement.currentTime = 0
 
 		if (!lambElement.paused) lambElement.pause()
@@ -36,8 +36,10 @@
 
 <main
 	bind:this={mainElement}
-	on:mousedown={onMouseDown}
-	on:mouseup={onMouseUp}
+	on:mousedown={onPressed}
+	on:mouseup={onRelease}
+	on:touchstart={onPressed}
+	on:touchend={onRelease}
 />
 
 <audio bind:this={lambElement} src="/av/lamb.mp3" />
